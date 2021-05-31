@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\Admin\LoginController as AdminLoginController;
 
 /*
@@ -17,7 +18,7 @@ use App\Http\Controllers\Auth\Admin\LoginController as AdminLoginController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth:admin'], function () {
     Route::prefix('admin')->group(function () {
@@ -32,4 +33,12 @@ Route::prefix('admin')->group(function () {
 });
 
 Auth::routes();
+
+Route::group(['middleware' => 'auth:applicant'], function () {
+    Route::prefix('applicant')->group(function () {
+        Route::get('/', function () { return view('applicant.index'); })->name('applicant.index');
+    });
+});
+
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 

@@ -6,7 +6,8 @@
         <h4 class="text-center">Scholarship Demo</h4>
         <div class="login-content mb-4">
             <h3 class="text-center mb-4">Welcome Back</h3>
-            <form action="#" method="post">
+            @include('components.validation-errors')
+            <form action="{{ route('login') }}" method="post">
                 @csrf
                 <div class="form-group form-inline">
                     <div class="input-group icon-transparent w-100">

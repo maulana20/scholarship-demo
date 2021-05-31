@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-2{fill:#a2b7f8}
+        </style>
+    </defs>
+    <g id="Group_384" transform="translate(-636 -175)">
+        <path id="Rectangle_285" fill="none" d="M0 0H24V24H0z" transform="translate(636 175)"/>
+        <g id="Group_387" transform="translate(672.056 143)">
+            <circle id="Ellipse_52" cx="3.5" cy="3.5" r="3.5" class="cls-2" transform="translate(-24 36)"/>
+            <circle id="Ellipse_53" cx="3" cy="3" r="3" class="cls-2" transform="translate(-33 36)"/>
+            <path id="Path_6968" d="M-19 44l-1.5 5.531L-22 44a7.318 7.318 0 0 0-4.492 3.2A3.184 3.184 0 0 0-27 48.926v.921A3.153 3.153 0 0 0-23.847 53h6.694A3.153 3.153 0 0 0-14 49.847v-.921a3.184 3.184 0 0 0-.508-1.73A7.318 7.318 0 0 0-19 44z" class="cls-2"/>
+            <path id="Path_6969" d="M-28 49.847v-.921a4.159 4.159 0 0 1 .67-2.275 8.515 8.515 0 0 1 1.53-1.769A5.673 5.673 0 0 0-28.833 43L-30 47.3l-1.167-4.3a5.688 5.688 0 0 0-3.493 2.486 2.478 2.478 0 0 0-.4 1.345v.716A2.453 2.453 0 0 0-32.6 50h4.619c-.005-.052-.019-.1-.019-.153z" class="cls-2"/>
+            <path id="Path_6970" d="M-19 44l-1.5 5.531L-22 44a7.318 7.318 0 0 0-4.492 3.2A3.184 3.184 0 0 0-27 48.926v.921A3.153 3.153 0 0 0-23.847 53h6.694A3.153 3.153 0 0 0-14 49.847v-.921a3.184 3.184 0 0 0-.508-1.73A7.318 7.318 0 0 0-19 44z" class="cls-2"/>
+        </g>
+    </g>
+</svg>

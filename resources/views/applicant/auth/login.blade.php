@@ -31,7 +31,7 @@
                 </div>
             </form>
         </div>
-        <p class="text-center">Donâ€™t have an account? <a href="{{ route('register') }}">Register</a></p>
+        <p class="text-center">Don’t have an account? <a href="{{ route('register') }}">Register</a></p>
     </div>
 
     @stack('preload-scripts')

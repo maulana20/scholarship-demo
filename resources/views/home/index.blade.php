@@ -1,6 +1,4 @@
-@extends('layouts.guest')
-
-@section('content')
+<x-guest-layout>
 <div class="container-fluid landing">
     <div class="row landing-header">
         <div class="col-12 col-lg-8 landing-welcome">
@@ -195,9 +193,6 @@
         </ul>
     </div>
 </div>
-
-
-@endsection
 @section('script')
 <script>
     var $carousel = $('#landingCarousel');
@@ -223,4 +218,4 @@
         handled=true;
     });
 </script>
-@endsection
+</x-app-layout>

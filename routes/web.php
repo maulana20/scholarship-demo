@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\Admin\LoginController as AdminLoginController;
 
 /*
@@ -32,13 +31,10 @@ Route::prefix('admin')->group(function () {
     Route::get('logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
 });
 
-Auth::routes();
+require __DIR__.'/auth.php';
 
-Route::group(['middleware' => 'auth:applicant'], function () {
+Route::group(['middleware' => ['auth:applicant', 'verified']], function () {
     Route::prefix('applicant')->group(function () {
         Route::get('/', function () { return view('applicant.index'); })->name('applicant.index');
     });
 });
-
-Route::get('logout', [LoginController::class, 'logout'])->name('logout');
-

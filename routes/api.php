@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Auth\API\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('login', [LoginController::class, 'login']);
+
+Route::group(['middleware' => 'auth:sanctum'], function () {
+    Route::prefix('applicant')->group(function () {
+        Route::get('/', function () { return response()->json(['success' => true, 'data' => null, 'message' => 'Show applicant successfully.'], 200); });
+    });
+    Route::get('logout', [LoginController::class, 'logout']);
 });

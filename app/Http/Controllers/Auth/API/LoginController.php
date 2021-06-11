@@ -30,11 +30,16 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         if(Auth::guard('applicant')->attempt(['email' => $request->email, 'password' => $request->password])){ 
-            $user = Auth::guard('applicant')->user(); 
+            $user = Auth::guard('applicant')->user();
+            
             $success['token'] =  $user->createToken('auth-token')->plainTextToken; 
             $success['name'] =  $user->name;
    
-            return $this->sendResponse($success, 'Applicant login successfully.');
+            if (empty($user->email_verified_at)) {
+                return $this->sendResponse($success, 'Please verify your email.');
+            } else {
+                return $this->sendResponse($success, 'Applicant login successfully.');
+            }
         } 
         else{ 
             return $this->sendError('Unauthorised.', ['error' => 'Unauthorised']);
